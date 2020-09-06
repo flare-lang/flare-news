@@ -1,0 +1,18 @@
+name: News
+on:
+    issues:
+        types:
+            - opened
+    pull_request:
+        types:
+            - opened
+jobs:
+    news:
+        runs-on: windows-latest
+        steps:
+            - name: Close issue
+              uses: peter-evans/close-issue@master
+            - name: Lock issue
+              uses: OSDKDev/lock-issues@master
+              with:
+                  repo-token: ${{ secrets.GITHUB_TOKEN }}

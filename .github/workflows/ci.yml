@@ -1,0 +1,23 @@
+name: CI
+on:
+    push:
+    pull_request:
+        types:
+            - edited
+            - opened
+            - reopened
+            - synchronize
+jobs:
+    ci:
+        runs-on: windows-latest
+        steps:
+            - name: Clone repository
+              uses: actions/checkout@master
+            - name: Install dependencies
+              shell: pwsh
+              run: |
+                  npm install markdownlint-cli -g
+            - name: Lint Markdown files
+              shell: pwsh
+              run: |
+                  markdownlint *.md
