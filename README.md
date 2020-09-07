@@ -1,4 +1,4 @@
-# <img src="https://raw.githubusercontent.com/flare-lang/flare-lang.github.io/source/Flare.svg" width="32"> Flare Programming Language News
+# <img src="https://github.com/flare-lang/flare-lang.github.io/raw/master/Flare.svg" width="32"> Flare Programming Language News
 
 This repository is used by the [Flare](https://flare-lang.org) development team
 for news and announcements, posted in the form of issues. Users can subscribe to
