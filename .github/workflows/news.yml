@@ -10,9 +10,22 @@ jobs:
     news:
         runs-on: windows-latest
         steps:
+            - name: Permission check
+              id: permission
+              uses: lannonbr/repo-permission-check-action@master
+              with:
+                  permission: write
+              env:
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              continue-on-error: true
             - name: Close issue
+              if: steps.permission.outcome == 'failure'
               uses: peter-evans/close-issue@master
+              with:
+                  comment: |
+                      Please do not open issues or pull requests on this repository.
             - name: Lock issue
+              if: github.event_name == 'issue'
               uses: OSDKDev/lock-issues@master
               with:
                   repo-token: ${{ secrets.GITHUB_TOKEN }}
