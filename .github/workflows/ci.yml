@@ -17,7 +17,7 @@ jobs:
             - name: Install dependencies
               shell: pwsh
               run: |
-                  npm install markdownlint-cli -g
+                  npm install markdownlint-cli@0.23.2 -g
             - name: Lint Markdown files
               shell: pwsh
               run: |
