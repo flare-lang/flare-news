@@ -12,7 +12,7 @@ jobs:
         steps:
             - name: Permission check
               id: permission
-              uses: lannonbr/repo-permission-check-action@master
+              uses: lannonbr/repo-permission-check-action@2.0.1
               with:
                   permission: write
               env:
@@ -20,12 +20,12 @@ jobs:
               continue-on-error: true
             - name: Close issue
               if: steps.permission.outcome == 'failure'
-              uses: peter-evans/close-issue@master
+              uses: peter-evans/close-issue@v1.0.1
               with:
                   comment: |
                       Please do not open issues or pull requests on this repository.
             - name: Lock issue
               if: github.event_name == 'issues'
-              uses: OSDKDev/lock-issues@master
+              uses: OSDKDev/lock-issues@v1.1
               with:
                   repo-token: ${{ secrets.GITHUB_TOKEN }}
