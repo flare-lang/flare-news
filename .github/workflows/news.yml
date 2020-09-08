@@ -36,6 +36,7 @@ jobs:
               with:
                   webhook_id: ${{ secrets.DISCORD_NEWS_ID }}
                   webhook_token: ${{ secrets.DISCORD_NEWS_TOKEN }}
+                  message_text: ${{ github.event.title }}
                   message_embed_authorname: ${{ github.event.user.login }}
                   message_embed_authorurl: ${{ github.event.user.html_url }}
                   message_embed_title: ${{ github.event.title }}
