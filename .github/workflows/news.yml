@@ -30,3 +30,14 @@ jobs:
               uses: OSDKDev/lock-issues@v1.1
               with:
                   repo-token: ${{ secrets.GITHUB_TOKEN }}
+            - name: Notify Discord
+              if: github.event_name == 'issues' && github.repository == 'flare-lang/flare-news' && steps.permission.outcome == 'success'
+              uses: hugoalh/GitHubAction.SendToDiscord@v1.1.6
+              with:
+                  webhook_id: ${{ secrets.DISCORD_NEWS_ID }}
+                  webhook_token: ${{ secrets.DISCORD_NEWS_TOKEN }}
+                  message_embed_authorname: ${{ github.event.user.login }}
+                  message_embed_authorurl: ${{ github.event.user.html_url }}
+                  message_embed_title: ${{ github.event.title }}
+                  message_embed_titleurl: ${{ github.event.html_url }}
+                  message_embed_description: ${{ github.event.body }}
