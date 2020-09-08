@@ -1,6 +1,6 @@
 # <img src="https://github.com/flare-lang/flare-lang.github.io/raw/master/Flare.svg" width="32"> Flare Programming Language News
 
-[![Build Status](https://github.com/flare-lang/flare-lang.github.io/workflows/CI/badge.svg)](https://github.com/flare-lang/flare-news/actions?query=workflow%3ACI)
+[![Build Status](https://github.com/flare-lang/flare-news/workflows/CI/badge.svg)](https://github.com/flare-lang/flare-news/actions?query=workflow%3ACI)
 [![Discord Server](https://discordapp.com/api/guilds/473031281396023317/widget.png)](https://discord.gg/EWXVkJ2)
 
 This repository is used by the [Flare](https://flare-lang.org) development team
