@@ -27,7 +27,6 @@ jobs:
                   comment: |
                       Please do not open issues or pull requests on this repository.
             - name: Lock issue
-              if: github.event_name == 'issues'
               uses: OSDKDev/lock-issues@v1.1
               with:
                   repo-token: ${{ secrets.GITHUB_TOKEN }}
