@@ -26,3 +26,8 @@ jobs:
               shell: pwsh
               run: |
                   markdownlint *.md
+            - name: Notify Discord
+              if: always() && github.event_name == 'push' && github.repository == 'flare-lang/flare-news'
+              uses: sarisia/actions-status-discord@v1.7.0
+              with:
+                  webhook: ${{ secrets.DISCORD_BUILDS_WEBHOOK }}
