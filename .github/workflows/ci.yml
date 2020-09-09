@@ -27,7 +27,7 @@ jobs:
               run: |
                   markdownlint *.md
             - name: Notify Discord
-              if: (cancelled() || failure()) && github.event_name == 'push' && github.repository == 'flare-lang/flare-news'
+              if: failure() && github.event_name == 'push' && github.repository == 'flare-lang/flare-news'
               uses: sarisia/actions-status-discord@v1.7.0
               with:
                   webhook: ${{ secrets.DISCORD_BUILDS_WEBHOOK }}
