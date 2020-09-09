@@ -36,9 +36,8 @@ jobs:
               with:
                   webhook_id: ${{ secrets.DISCORD_NEWS_ID }}
                   webhook_token: ${{ secrets.DISCORD_NEWS_TOKEN }}
-                  message_text: ${{ github.event.title }}
-                  message_embed_authorname: ${{ github.event.user.login }}
-                  message_embed_authorurl: ${{ github.event.user.html_url }}
-                  message_embed_title: ${{ github.event.title }}
-                  message_embed_titleurl: ${{ github.event.html_url }}
-                  message_embed_description: ${{ github.event.body }}
+                  message_embed_authorname: ${{ github.event.issue.user.login }}
+                  message_embed_authorurl: ${{ github.event.issue.user.html_url }}
+                  message_embed_title: ${{ github.issue.event.title }}
+                  message_embed_titleurl: ${{ github.event.issue.html_url }}
+                  message_embed_description: ${{ github.event.issue.body }}
