@@ -22,7 +22,7 @@ jobs:
               continue-on-error: true
             - name: Close issue
               if: steps.permission.outcome == 'failure'
-              uses: peter-evans/close-issue@v1.0.1
+              uses: peter-evans/close-issue@v1.0.2
               with:
                   comment: |
                       Please do not open issues or pull requests on this repository.
@@ -32,7 +32,7 @@ jobs:
                   repo-token: ${{ secrets.GITHUB_TOKEN }}
             - name: Notify Discord
               if: github.event_name == 'issues' && github.repository == 'flare-lang/flare-news' && steps.permission.outcome == 'success'
-              uses: hugoalh/GitHubAction.SendToDiscord@v1.1.6
+              uses: hugoalh/GitHubAction.SendToDiscord@v3.0.1
               with:
                   webhook_id: ${{ secrets.DISCORD_NEWS_ID }}
                   webhook_token: ${{ secrets.DISCORD_NEWS_TOKEN }}
